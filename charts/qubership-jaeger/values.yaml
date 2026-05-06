@@ -1703,6 +1703,12 @@ collector:
   ingress:
     http:
       install: false
+      # Add annotation that prevents Gateway API converter from processing this Ingress.
+      # Use it when HTTPRoute/GRPCRoute analogue is already configured.
+      # Type: boolean
+      # Default: false
+      #
+      addGatewayApiAnnotation: false
       hosts: []
       defaultPaths:
       # Format:
@@ -1728,6 +1734,12 @@ collector:
           port: 14268
     grpc:
       install: false
+      # Add annotation that prevents Gateway API converter from processing this Ingress.
+      # Use it when HTTPRoute/GRPCRoute analogue is already configured.
+      # Type: boolean
+      # Default: false
+      #
+      addGatewayApiAnnotation: false
       hosts: []
       defaultPaths:
       # Format:
@@ -2034,6 +2046,13 @@ hotrod:
     #
     install: false
 
+    # Add annotation that prevents Gateway API converter from processing this Ingress.
+    # Use it when HTTPRoute analogue is already configured.
+    # Type: boolean
+    # Default: false
+    #
+    addGatewayApiAnnotation: false
+
     # FQDN of ingress host.
     # Type: string
     # Mandatory: yes
@@ -2172,6 +2191,14 @@ query:
     # Default: false
     #
     install: false
+
+    # Add annotation that prevents Gateway API converter from processing this Ingress.
+    # Use it when HTTPRoute analogue is already configured.
+    # Type: boolean
+    # Default: false
+    #
+    addGatewayApiAnnotation: false
+
     # FQDN of ingress host.
     # Type: string
     # Mandatory: yes
