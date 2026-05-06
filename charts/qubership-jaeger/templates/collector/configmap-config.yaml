@@ -134,6 +134,7 @@ data:
               indices:
                 index_prefix: {{ .Values.elasticsearch.indexPrefix | quote }}
               {{- end }}
+              use_aliases: {{ .Values.elasticsearch.useAliases | default false }}
               tls:
                 {{- if .Values.elasticsearch.client.tls.enabled }}
                 {{- if .Values.elasticsearch.client.tls.insecureSkipVerify }}
